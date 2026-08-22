@@ -1,8 +1,38 @@
-#title {
+@font-face {
+  font-family: "Icebeing";
+  src: url("fonts/Icebeing-Regular.woff") format("woff");
+}
+#centered {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  font-style: italic;
+}
+
+#train {
+  mask-image: radial-gradient(
+    circle 225px at center,
+    black 60%,
+    transparent 100%
+  );
+  -webkit-mask-image: radial-gradient(
+    circle 225px at center,
+    black 60%,
+    transparent 100%
+  );
+}
+
+#banner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 450px;
+  font-family: Icebeing;
+  font-size: 48px;
+  color: rgba(255, 255, 255, 0.75);
+  text-align: center;
+}
+body {
+  background-color: #000000;
 }
