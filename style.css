@@ -6,12 +6,41 @@
 :root {
   --black: #130e09;
   --white: #fff5ea;
+  --orange: rgb(227, 97, 31);
+  --pink: rgba(254, 78, 253);
+  --yellow: rgba(242, 180, 10);
+  --red: rgba(220, 25, 3);
+  --cyan: rgb(154, 180, 216);
 }
 html,
 body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+#landing-page-nav {
+  text-align: center;
+  margin-top: 1em;
+}
+
+.pink {
+  color: var(--pink);
+}
+
+.cyan {
+  color: var(--cyan);
+}
+
+.orange {
+  color: var(--orange);
+}
+
+.red {
+  color: var(--red);
+}
+.yellow {
+  color: var(--yellow);
 }
 
 body {
@@ -42,11 +71,20 @@ body {
 h1 {
   font-family: "Icebeing", "Brush Script MT", cursive;
   text-align: center;
-  color: rgb(255, 180, 42);
+  color: var(--red);
+  font-size: 1.25rem;
+}
+
+h2 {
+  font-size: 1.125rem;
+}
+
+h3 {
+  font-size: 1rem;
 }
 
 h1 a {
-  color: rgb(255, 180, 42);
+  color: var(--red);
 }
 
 main {
@@ -102,14 +140,17 @@ a:hover {
 }
 
 .skip-story {
+  font-size: 0.8rem;
   display: block;
+  text-align: center;
   width: fit-content;
   margin: 0 auto 1.5rem;
 }
 
 .read-more {
   font-family: "Icebeing", "Brush Script MT", cursive;
-  font-size: inherit;
+  text-align: center;
+  font-size: 0.8rem;
   color: var(--white);
   background: none;
   border: none;
