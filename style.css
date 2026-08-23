@@ -3,28 +3,50 @@
   src: url("fonts/Icebeing-Regular.woff") format("woff");
 }
 
+:root {
+  --black: #130e09;
+  --white: #fff5ea;
+}
 html,
 body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  color: #ffffff;
+}
+
+body {
+  color: var(--white);
+  background-color: var(--black);
+}
+
+[hidden] {
+  display: none !important;
 }
 
 .container {
   max-width: 600px;
   margin: auto;
-  /* text-align: left; */
+  padding: 2em;
+}
+
+@keyframes blink {
+  100% {
+    visibility: hidden;
+  }
+}
+
+.blink {
+  animation: blink 2s steps(2, start) infinite;
 }
 
 h1 {
   font-family: "Icebeing", "Brush Script MT", cursive;
   text-align: center;
-  color: orange;
+  color: rgb(255, 180, 42);
 }
 
 h1 a {
-  color: orange;
+  color: rgb(255, 180, 42);
 }
 
 main {
@@ -51,12 +73,12 @@ main {
   object-position: center;
   mask-image: radial-gradient(
     circle closest-side at center,
-    black 60%,
+    var(--black) 60%,
     transparent 100%
   );
   -webkit-mask-image: radial-gradient(
     circle closest-side at center,
-    black 60%,
+    var(--black) 60%,
     transparent 100%
   );
 }
@@ -64,15 +86,15 @@ main {
 #banner {
   font-family: "Icebeing", "Brush Script MT", cursive;
   font-size: 48px;
-  color: #ffffff;
+  color: var(--white);
   mix-blend-mode: difference;
   text-align: center;
 }
 
-#banner a {
-  color: #ffffff;
+a:hover {
+  color: inherit;
   text-decoration-style: wavy;
-  text-underline-offset: 0.25em;
+  text-underline-offset: 0.2em;
 }
 
 #the-story {
@@ -80,25 +102,34 @@ main {
 }
 
 .skip-story {
-  display: inline-block;
-  margin-bottom: 1.5rem;
+  display: block;
+  width: fit-content;
+  margin: 0 auto 1.5rem;
 }
 
 .read-more {
   font-family: "Icebeing", "Brush Script MT", cursive;
   font-size: inherit;
-  color: #ffffff;
+  color: var(--white);
   background: none;
   border: none;
   padding: 0;
-  margin: 0.5rem 0 1.5rem;
+  display: block;
+  width: fit-content;
+  margin: 0.5rem auto 1.5rem;
   text-decoration: underline;
+  text-underline-offset: 0.2em;
   cursor: pointer;
+}
+
+.read-more:hover {
+  text-decoration-style: wavy;
 }
 
 a {
   font-family: "Icebeing", "Brush Script MT", cursive;
-  color: #ffffff;
+  text-underline-offset: 0.2em;
+  color: var(--white);
 }
 
 .ib {
@@ -113,10 +144,6 @@ a {
   object-fit: cover;
   object-position: center;
   filter: brightness(30%);
-}
-
-body {
-  background-color: #000000;
 }
 
 @media only screen and (max-width: 500px) {

@@ -10,6 +10,7 @@
   <body>
     <main>
       <div class="container">
+        <img src="/img/train-puffs.gif" width="100%" />
         <h1>
           Icebeing takes the Long Train (and finds
           <a href="/">The Very Questions</a> along the way)
@@ -21,8 +22,10 @@
               He couldn&rsquo;t believe his luck. After the busted alarm clock
               scuppered the beginning, the traffic snarl scuppered the middle,
               and the inept ticket office did its very best to scupper the
-              penultimate, <span class="ib">Icebeing</span> had made the 10:14
-              by the skin of his teeth. The morning had truly turned around.
+              penultimate, <span class="ib">Icebeing</span> had made the 10<span
+                class="blink"
+                >:</span
+              >14 by the skin of his teeth. The morning had truly turned around.
             </p>
           </div>
           <div class="chapter">
@@ -311,7 +314,7 @@
         const skipLink = document.createElement("a");
         skipLink.href = "#";
         skipLink.className = "skip-story";
-        skipLink.textContent = "see all of the story in one go";
+        skipLink.textContent = "(see all of the story in one go)";
         story.before(skipLink);
 
         function collectTextNodes(root) {
@@ -386,7 +389,7 @@
             }
             current.node.textContent = current.text.slice(0, charIndex);
 
-            setTimeout(step, 15);
+            setTimeout(step, 12);
           }
 
           step();
