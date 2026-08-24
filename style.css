@@ -11,6 +11,7 @@
   --yellow: rgba(242, 180, 10);
   --red: rgba(220, 25, 3);
   --cyan: rgb(154, 180, 216);
+  --green: rgb(45, 212, 45);
 }
 html,
 body {
@@ -30,6 +31,10 @@ body {
 
 .cyan {
   color: var(--cyan);
+}
+
+.green {
+  color: var(--green);
 }
 
 .orange {
