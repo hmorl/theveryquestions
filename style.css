@@ -12,7 +12,7 @@
   --red: rgba(220, 25, 3);
   --cyan: rgb(154, 180, 216);
   --green: rgb(45, 212, 45);
-  --blue: rgb(188, 202, 255);
+  --blue: rgb(114, 125, 250);
 }
 html,
 body {
@@ -84,6 +84,7 @@ h1 {
   text-align: center;
   color: var(--red);
   font-size: 1.25rem;
+  margin-top: 2em;
 }
 
 h2 {
@@ -133,12 +134,42 @@ main {
   );
 }
 
+#train-overlay {
+  grid-area: 1 / 1;
+  width: min(450px, 100vw);
+  position: relative;
+  animation: blur-pulse 5s ease-in-out infinite;
+}
+
+@keyframes blur-pulse {
+  0%,
+  35% {
+    filter: blur(0px);
+  }
+  80% {
+    filter: blur(5px);
+  }
+  100% {
+    filter: blur(0px);
+  }
+}
+
 #banner {
   font-family: "Icebeing", "Brush Script MT", cursive;
   font-size: 48px;
   color: var(--white);
   mix-blend-mode: difference;
   text-align: center;
+  line-height: 1.1em;
+}
+
+#banner-sub {
+  font-size: 0.75em;
+  line-height: inherit;
+}
+
+#ib-link a {
+  text-decoration-style: none;
 }
 
 a:hover {
@@ -183,7 +214,7 @@ a:hover {
 a {
   font-family: "Icebeing", "Brush Script MT", cursive;
   text-underline-offset: 0.2em;
-  color: var(--white);
+  color: var(--yellow);
 }
 
 .ib {
