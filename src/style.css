@@ -1,0 +1,380 @@
+@font-face {
+  font-family: "Icebeing";
+  src: url("fonts/Icebeing-Regular.woff") format("woff");
+  font-display: swap;
+}
+
+:root {
+  --black: #130e09;
+  --white: #fff5ea;
+
+  --orange-1: #e3611f;
+  --orange-2: color-mix(in srgb, var(--orange-1) 75%, var(--white));
+  --orange-3: color-mix(in srgb, var(--orange-1) 50%, var(--white));
+  --pink-1: #fe4efd;
+  --pink-2: color-mix(in srgb, var(--pink-1) 75%, var(--white));
+  --pink-3: color-mix(in srgb, var(--pink-1) 50%, var(--white));
+  --yellow-1: #f2b40a;
+  --yellow-2: color-mix(in srgb, var(--yellow-1) 75%, var(--white));
+  --yellow-3: color-mix(in srgb, var(--yellow-1) 50%, var(--white));
+  --red-1: #dc1903;
+  --red-2: color-mix(in srgb, var(--red-1) 75%, var(--white));
+  --red-3: color-mix(in srgb, var(--red-1) 50%, var(--white));
+  --cyan-1: #9ab4d8;
+  --cyan-2: color-mix(in srgb, var(--cyan-1) 75%, var(--white));
+  --cyan-3: color-mix(in srgb, var(--cyan-1) 50%, var(--white));
+  --green-1: #2dd42d;
+  --green-2: color-mix(in srgb, var(--green-1) 75%, var(--white));
+  --green-3: color-mix(in srgb, var(--green-1) 50%, var(--white));
+  --blue-1: #727dfa;
+  --blue-2: color-mix(in srgb, var(--blue-1) 75%, var(--white));
+  --blue-3: color-mix(in srgb, var(--blue-1) 50%, var(--white));
+
+  --font-body: "Courier New", Courier, monospace;
+  --font-display: "Icebeing", "Brush Script MT", cursive;
+  --text-small: 0.875rem;
+  --text-body: 1rem;
+  --text-h2: 1.125rem;
+  --text-h1: 1.25rem;
+
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 20px;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  line-height: 1.5;
+  color: var(--white);
+  background-color: var(--black);
+}
+
+:where(h1, h2, h3, p) {
+  margin: 0;
+}
+
+img {
+  display: block;
+  max-inline-size: 100%;
+  block-size: auto;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+h1,
+h2,
+h3,
+.ib {
+  font-family: var(--font-display);
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.25;
+}
+
+h1,
+h2 {
+  color: var(--red-2);
+}
+
+h1 {
+  font-size: var(--text-h1);
+}
+
+h2 {
+  font-size: var(--text-h2);
+}
+
+h3 {
+  font-size: var(--text-body);
+}
+
+h1 a {
+  color: inherit;
+}
+
+a {
+  color: var(--yellow-1);
+  font-family: var(--font-display);
+}
+
+a,
+.story-control {
+  text-underline-offset: 0.2em;
+}
+
+a:hover,
+.story-control:hover {
+  text-decoration-style: wavy;
+}
+
+:focus-visible {
+  outline: 2px solid var(--cyan-1);
+  outline-offset: 2px;
+}
+
+main {
+  padding-block: var(--space-4);
+}
+
+.page-centered {
+  display: grid;
+  align-items: center;
+  min-block-size: 100vh;
+  min-block-size: 100dvh;
+}
+
+.container {
+  inline-size: 100%;
+  max-inline-size: calc(var(--content-width, 37.5rem) + 2 * var(--space-2));
+  margin-inline: auto;
+  padding-inline: var(--space-2);
+}
+
+.vstack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.hstack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  margin-block-end: var(--space-3);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.prose {
+  text-align: start;
+}
+
+.prose :where(p, h2, h3, ul, ol, blockquote) {
+  margin-block: var(--space-2) 0;
+}
+
+.prose > :first-child {
+  margin-block-start: 0;
+}
+
+.pink-1 {
+  color: var(--pink-1);
+}
+
+.cyan-1 {
+  color: var(--cyan-1);
+}
+
+.blue-1 {
+  color: var(--blue-1);
+}
+
+.green-1 {
+  color: var(--green-1);
+}
+
+.orange-1 {
+  color: var(--orange-1);
+}
+
+.yellow-1 {
+  color: var(--yellow-1);
+}
+
+.red-1 {
+  color: var(--red-1);
+}
+
+.pink-2 {
+  color: var(--pink-2);
+}
+
+.cyan-2 {
+  color: var(--cyan-2);
+}
+
+.blue-2 {
+  color: var(--blue-2);
+}
+
+.green-2 {
+  color: var(--green-2);
+}
+
+.orange-2 {
+  color: var(--orange-2);
+}
+
+.yellow-2 {
+  color: var(--yellow-2);
+}
+
+.red-2 {
+  color: var(--red-2);
+}
+
+.artwork {
+  display: grid;
+  inline-size: min(100%, 28rem);
+  margin-inline: auto;
+}
+
+.artwork a {
+  display: grid;
+}
+
+.artwork img {
+  grid-area: 1 / 1;
+  inline-size: 100%;
+}
+
+#train {
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  -webkit-mask-image: radial-gradient(circle closest-side, var(--black) 60%, transparent 100%);
+  mask-image: radial-gradient(circle closest-side, var(--black) 60%, transparent 100%);
+}
+
+#train-overlay {
+  z-index: 1;
+  animation: blur-pulse 5s ease-in-out infinite;
+}
+
+.thank-you-artwork {
+  inline-size: 50%;
+  margin-inline: auto;
+}
+
+.blink {
+  animation: blink 2s steps(2, start) infinite;
+}
+
+.story-control {
+  display: block;
+  min-block-size: 3rem;
+  margin-inline: auto;
+  padding: var(--space-1) var(--space-2);
+  border: none;
+  background: none;
+  color: var(--white);
+  font-family: var(--font-display);
+  font-size: var(--text-small);
+  text-align: center;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.read-more {
+  margin-block-start: var(--space-3);
+}
+
+.signup {
+  inline-size: min(100%, 25rem);
+  margin-inline: auto;
+  font-size: var(--text-small);
+}
+
+.signup-field {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.button,
+.signup input[type="email"] {
+  min-block-size: 2rem;
+  padding: 0.375rem var(--space-2);
+  border: 1px solid var(--white);
+  border-radius: 0;
+  background-color: var(--black);
+  color: var(--white);
+}
+
+.signup input[type="email"] {
+  flex: 1 1 6rem;
+  min-inline-size: 0;
+  font-family: var(--font-body);
+  text-align: start;
+}
+
+.button {
+  cursor: pointer;
+  border-style: dashed;
+}
+
+.button:hover {
+  border-color: var(--yellow-1);
+  color: var(--yellow-1);
+  border-style: solid;
+}
+
+/* Keep the Mailchimp bot trap out of both layout and keyboard navigation. */
+.honeypot {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+
+@keyframes blink {
+  100% {
+    visibility: hidden;
+  }
+}
+
+@keyframes blur-pulse {
+  0%,
+  35%,
+  100% {
+    filter: blur(0);
+  }
+  80% {
+    filter: blur(0.25rem);
+  }
+}
+
+@media (min-width: 40rem) {
+  .hstack {
+    flex-direction: row;
+    margin-block-end: 0;
+  }
+
+  .hstack > nav {
+    flex-shrink: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .blink,
+  #train-overlay {
+    animation: none;
+  }
+}
