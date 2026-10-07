@@ -164,7 +164,7 @@ main {
   flex-direction: column;
   align-items: center;
   gap: var(--space-2);
-  margin-block-end: var(--space-3);
+  margin-bottom: var(--space-2);
 }
 
 .text-center {
@@ -364,7 +364,6 @@ main {
 @media (min-width: 40rem) {
   .hstack {
     flex-direction: row;
-    margin-block-end: 0;
   }
 
   .hstack > nav {
