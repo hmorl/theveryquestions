@@ -6,9 +6,9 @@ Plain HTML & CSS with a sprinkling of JS.
 
 ## Develop
 
-The site lives in `src/` and is published to GitHub Pages via an action.
+The site lives in `public/` and is published to GitHub Pages via GitHub Actions.
 
-Serve locally from `src/` with a simple server: `python3 -m http.server -d src`
+Serve locally from `public/` with a simple server: `python3 -m http.server -d public`
 
 ## Style guide
 
