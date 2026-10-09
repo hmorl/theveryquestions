@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Icebeing & The Very Questions</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <main class="page-centered">
+      <div class="container vstack text-center">
+        <div class="trove-gate">
+          <img src="/img/trovekeeper-bg.jpg" alt="" />
+          <img src="/img/trovekeeper.png" alt="what's the password please" />
+          <form id="gate" class="vstack ib signup">
+            <div class="signup-field">
+              <input
+                id="password"
+                class="input"
+                type="text"
+                name="password"
+                placeholder="?!"
+                autocomplete="off"
+                autocapitalize="off"
+                required
+                autofocus
+              />
+              <input type="submit" class="button" value="go in" />
+            </div>
+            <p id="error" class="orange-2" role="alert" hidden>that's not it</p>
+          </form>
+        </div>
+      </div>
+    </main>
+    <script>
+      const error = document.getElementById("error");
+
+      document.getElementById("gate").addEventListener("submit", async (e) => {
+        e.preventDefault();
+        error.hidden = true;
+        const password = document.getElementById("password").value.trim().toLowerCase();
+        if (!/^[a-z0-9-]+$/.test(password)) {
+          error.hidden = false;
+          return;
+        }
+        const url = `/trove/monthly/${password}/`;
+        try {
+          const res = await fetch(url, { method: "HEAD", cache: "no-store" });
+          if (!res.ok) {
+            error.hidden = false;
+            return;
+          }
+        } catch {}
+        location.href = url;
+      });
+    </script>
+  </body>
+</html>

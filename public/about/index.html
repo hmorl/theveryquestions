@@ -226,22 +226,15 @@
     </main>
 
     <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const story = document.getElementById("the-story");
-        if (!story) return;
+      const story = document.getElementById("the-story");
+      const chapters = Array.from(story.querySelectorAll(".chapter"));
 
-        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-          return;
-        }
-
-        const chapters = Array.from(story.querySelectorAll(".chapter"));
-        if (chapters.length === 0) return;
-
+      if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
         const buttons = [];
         for (let i = 0; i < chapters.length - 1; i++) {
           const btn = document.createElement("button");
           btn.type = "button";
-          btn.className = "story-control read-more";
+          btn.className = "link-button read-more";
           btn.textContent = "read more of the story...";
           btn.hidden = true;
           chapters[i].after(btn);
@@ -254,7 +247,7 @@
 
         const showAllButton = document.createElement("button");
         showAllButton.type = "button";
-        showAllButton.className = "story-control skip-story";
+        showAllButton.className = "link-button";
         showAllButton.textContent = "(see all of the story in one go)";
         story.before(showAllButton);
 
@@ -290,7 +283,8 @@
 
         showAllButton.addEventListener("click", revealAll);
 
-        function typeChapter(index, done) {
+        // Types out a chapter, then shows its "read more" button
+        function typeChapter(index) {
           const nodeData = chapterNodes[index];
           for (const item of nodeData) {
             item.node.textContent = "";
@@ -305,7 +299,7 @@
             }
 
             if (nodeIndex >= nodeData.length) {
-              done();
+              if (buttons[index]) buttons[index].hidden = false;
               return;
             }
 
@@ -338,22 +332,14 @@
             chapters[i].hidden = true;
             const next = chapters[i + 1];
             next.hidden = false;
-            typeChapter(i + 1, () => {
-              if (buttons[i + 1]) {
-                buttons[i + 1].hidden = false;
-              }
-            });
+            typeChapter(i + 1);
             next.tabIndex = -1;
             next.focus({ preventScroll: true });
           });
         }
 
-        typeChapter(0, () => {
-          if (buttons[0]) {
-            buttons[0].hidden = false;
-          }
-        });
-      });
+        typeChapter(0);
+      }
     </script>
   </body>
 </html>
