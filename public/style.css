@@ -262,7 +262,7 @@ main {
 }
 
 .artwork {
-  width: min(100%, 28rem);
+  width: min(100%, 26rem);
   margin: 0 auto;
 }
 
@@ -301,6 +301,20 @@ main {
   font-family: var(--font-display);
   font-size: var(--text-small);
   text-decoration: underline;
+}
+
+.trove-link {
+  align-self: center;
+  margin: var(--space-1) 0;
+}
+
+.trove-link img {
+  transition: translate 0.08s ease-out;
+}
+
+.trove-link:hover img,
+.trove-link:focus-visible img {
+  translate: 0 -0.25rem;
 }
 
 .read-more {
@@ -469,7 +483,7 @@ body:has(.dialog[open]) {
 
 .signup {
   width: min(100%, 25rem);
-  margin: 0 auto;
+  margin: var(--space-2) auto 0;
   font-size: var(--text-small);
 }
 
