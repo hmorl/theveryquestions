@@ -328,18 +328,18 @@ main {
   place-content: center;
   justify-self: end;
   width: 7.5rem;
-  aspect-ratio: 1246 / 1050;
-  padding: 8% 12% 25% 10%;
+  aspect-ratio: 300 / 253;
+  padding: 13% 12% 25% 10%;
   color: var(--black);
   font-size: 0.7rem;
   line-height: 1.1;
   margin-bottom: -0.5rem;
   background:
-    url("img/speech-bubble.png") 0 0 / 100%,
+    url("img/speech-bubble.png") 0 0 / 100% no-repeat,
     var(--crab);
   mask:
-    url("img/speech-bubble-bg.png") 0 0 / 100%,
-    url("img/speech-bubble.png") 0 0 / 100%;
+    url("img/speech-bubble-bg.png") 0 0 / 100% no-repeat,
+    url("img/speech-bubble.png") 0 0 / 100% no-repeat;
 }
 
 .crab::before,
@@ -392,7 +392,7 @@ main {
   height: 100%;
   max-width: none;
   max-height: none;
-  margin: 0;
+  margin: auto;
   padding: 0 0 var(--space-4);
   border: none;
   background-color: var(--crab);
