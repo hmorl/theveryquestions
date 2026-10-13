@@ -9,7 +9,7 @@
   <body>
     <main>
       <div class="container vstack">
-        <a href="/"><img src="/img/train-puffs.gif" width="674" height="300" alt="Puffing steam train" /></a>
+        <a href="/"><img src="/img/train-puffs.gif" width="674" height="300" alt="Puffing steam train - home" /></a>
         <h1 class="text-center">
           Icebeing takes the Long Train (and finds
           <a href="/">The Very Questions</a> along the way)
@@ -300,6 +300,7 @@
 
             if (nodeIndex >= nodeData.length) {
               if (buttons[index]) buttons[index].hidden = false;
+              if (index > 0) chapters[index].focus({ preventScroll: true });
               return;
             }
 
@@ -332,9 +333,8 @@
             chapters[i].hidden = true;
             const next = chapters[i + 1];
             next.hidden = false;
-            typeChapter(i + 1);
             next.tabIndex = -1;
-            next.focus({ preventScroll: true });
+            typeChapter(i + 1);
           });
         }
 

@@ -16,7 +16,10 @@ for (const crab of document.querySelectorAll(".crab")) {
 }
 
 for (const dialog of document.querySelectorAll(".dialog")) {
-  dialog.insertAdjacentHTML("afterbegin", '<form method="dialog"><button class="link-button">X</button></form>');
+  dialog.insertAdjacentHTML(
+    "afterbegin",
+    '<form method="dialog"><button class="link-button" aria-label="close">X</button></form>',
+  );
   dialog.addEventListener("close", () => {
     if (history.state?.dialog) history.back();
   });
